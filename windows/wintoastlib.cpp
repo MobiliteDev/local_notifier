@@ -33,7 +33,7 @@
     #define DEBUG_MSG(str) do { std::wcout << str << std::endl; } while( false )
 #endif
 
-#define DEFAULT_SHELL_LINKS_PATH	L"\\Microsoft\\Windows\\Start Menu\\Programs\\"
+#define DEFAULT_SHELL_LINKS_PATH	L"\\Microsoft\\Windows\\Start Menu\\Programs\\Swisscows\\"
 #define DEFAULT_LINK_FORMAT			L".lnk"
 #define STATUS_SUCCESS (0x00000000)
 
