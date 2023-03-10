@@ -147,11 +147,13 @@ void LocalNotifierPlugin::Setup(
 
   std::string appName =
       std::get<std::string>(args.at(flutter::EncodableValue("appName")));
+  std::string appUserModelId =
+      std::get<std::string>(args.at(flutter::EncodableValue("appUserModelId")));
   std::string shortcutPolicy =
       std::get<std::string>(args.at(flutter::EncodableValue("shortcutPolicy")));
 
   WinToast::instance()->setAppName(converter.from_bytes(appName));
-  WinToast::instance()->setAppUserModelId(converter.from_bytes(appName));
+  WinToast::instance()->setAppUserModelId(converter.from_bytes(appUserModelId));
   if (shortcutPolicy.compare("ignore") == 0) {
     WinToast::instance()->setShortcutPolicy(WinToast::SHORTCUT_POLICY_IGNORE);
   } else if (shortcutPolicy.compare("requireNoCreate") == 0) {

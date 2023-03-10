@@ -81,10 +81,12 @@ class LocalNotifier {
 
   Future<void> setup({
     required String appName,
+    required String appUserModelId,
     ShortcutPolicy shortcutPolicy = ShortcutPolicy.requireCreate,
   }) async {
     final Map<String, dynamic> arguments = {
       'appName': appName,
+      'appUserModelId': appUserModelId,
       'shortcutPolicy': describeEnum(shortcutPolicy),
     };
     if (Platform.isWindows) {
