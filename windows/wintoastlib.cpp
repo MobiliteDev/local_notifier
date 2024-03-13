@@ -499,7 +499,7 @@ bool WinToast::initialize(_Out_opt_ WinToastError* error) {
     if (_shortcutPolicy != SHORTCUT_POLICY_IGNORE) {
         if (createShortcut() < 0) {
             setError(error, WinToastError::ShellLinkNotCreated);
-            DEBUG_MSG(L"Error while attaching the AUMI to the current proccess =(");
+            DEBUG_MSG(L"Error while attaching the AUMI to the current proccess SHORTCUT_POLICY_IGNORE =(");
             return false;
         }
     }
