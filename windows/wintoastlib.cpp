@@ -506,7 +506,7 @@ bool WinToast::initialize(_Out_opt_ WinToastError* error) {
 
     if (FAILED(DllImporter::SetCurrentProcessExplicitAppUserModelID(_aumi.c_str()))) {
         setError(error, WinToastError::InvalidAppUserModelID);
-        DEBUG_MSG(L"Error while attaching the AUMI to the current proccess =(");
+        DEBUG_MSG(L"Error while attaching the AUMI to the current proccess DllImporter =(");
         return false;
     }
 
