@@ -472,11 +472,18 @@ enum WinToast::ShortcutResult WinToast::createShortcut() {
 
     bool wasChanged;
     HRESULT hr = validateShellLinkHelper(wasChanged);
-    if (SUCCEEDED(hr))
-        return wasChanged ? SHORTCUT_WAS_CHANGED : SHORTCUT_UNCHANGED;
-
+    
+    if (SUCCEEDED(hr)){
+     DEBUG_MSG(L"succedded validate shell link helper!");
+     return wasChanged ? SHORTCUT_WAS_CHANGED : SHORTCUT_UNCHANGED;
+    }
+    
     hr = createShellLinkHelper();
-    return SUCCEEDED(hr) ? SHORTCUT_WAS_CREATED : SHORTCUT_CREATE_FAILED;
+    if(SUCCEEDED(hr) == false){
+	DEBUG_MSG(L"Error on create shell link helper!");
+	return SHORTCUT_CREATE_FAILED;
+    }
+    return SHORTCUT_WAS_CREATED ;
 }
 
 bool WinToast::initialize(_Out_opt_ WinToastError* error) {
